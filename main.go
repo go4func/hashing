@@ -49,7 +49,7 @@ func getInput(text string) ([]byte, error) {
 func bCrypt(password []byte, cost int) ([]byte, error) {
 	start := time.Now()
 	defer func() {
-		fmt.Printf("bcrypt with cost= %d finished in %v(ms)\n", cost, time.Since(start).Milliseconds())
+		fmt.Printf("bcrypt with cost= %d finished in %v\n", cost, time.Since(start))
 	}()
 
 	hashed, err := bcrypt.GenerateFromPassword(password, cost)
